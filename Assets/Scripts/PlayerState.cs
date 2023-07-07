@@ -4,12 +4,27 @@ using UnityEngine;
 
 public class PlayerState : MonoBehaviour {
 
-    void Start() {
-        
+    public bool canShootBulletOne() {
+        return true;
     }
 
+    public bool canShootBulletTwo() {
+        return true;
+    }
 
-    void Update() {
-        
+    public void shootBulletOne() {
+        Debug.Log("shoot bullet one");
+    }
+
+    public void shootBulletTwo() {
+        Debug.Log("shoot bullet two");
+    }
+
+    public GameObject getBulletOne() {
+        return null;
+    }
+
+    public GameObject getBulletTwo() {
+        return null;
     }
 }

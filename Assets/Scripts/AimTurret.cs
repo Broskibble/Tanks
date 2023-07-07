@@ -20,6 +20,7 @@ public class AimTurret : MonoBehaviour {
             Vector3 turretDirection = fixed_position - transform.position;
             float desiredAngle = Mathf.Atan2(turretDirection.x, turretDirection.z) * Mathf.Rad2Deg;
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, desiredAngle, transform.eulerAngles.z);
+            Debug.Log("turretDirection: " + turretDirection);
         }
 
         // if space bar is held, rotate turret upwards

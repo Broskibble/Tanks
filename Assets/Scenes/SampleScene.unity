@@ -484,6 +484,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25ff60382fdbdfe42aef0ca75c79a7b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 519420031}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1955306077
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,11 +607,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1981339329}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25ff60382fdbdfe42aef0ca75c79a7b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 519420031}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!212 &1981339331
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -883,6 +891,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2070127418}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf599eb700d073e4ebdf6f50fb27b544, type: 3}
+  m_Script: {fileID: 11500000, guid: 7758f8ee0b9caec4984bf1de30295b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
