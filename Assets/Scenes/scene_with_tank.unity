@@ -845,6 +845,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   target: {fileID: 2076772608}
+  fire_point: {fileID: 81720106}
 --- !u!1 &2076772608
 GameObject:
   m_ObjectHideFlags: 0

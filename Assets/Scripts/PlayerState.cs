@@ -1,8 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerState : MonoBehaviour {
+    private int health = 100;
+    private Bullet bulletOne;
+    private Bullet bulletTwo;
+    private float ammo;
+
+    void Start() {
+        bulletOne = Null;
+    }
 
     public bool canShootBulletOne() {
         return true;
@@ -20,11 +29,11 @@ public class PlayerState : MonoBehaviour {
         Debug.Log("shoot bullet two");
     }
 
-    public GameObject getBulletOne() {
-        return null;
+    public Bullet getBulletOne() {
+        return bulletOne;
     }
 
-    public GameObject getBulletTwo() {
-        return null;
+    public Bullet getBulletTwo() {
+        return bulletTwo;
     }
 }

@@ -1,4 +1,6 @@
-public class Bullet {
+using UnityEngine;
+
+public abstract class Bullet : MonoBehaviour {
 
     
 }
