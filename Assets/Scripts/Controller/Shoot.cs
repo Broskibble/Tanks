@@ -2,21 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootBullet : MonoBehaviour {
-    [SerializeField] private PlayerState playerState;
+public class Shoot : MonoBehaviour {
+    [SerializeField] private Player player;
     
     void Update() {
         if (Input.GetButton("Fire1")) {
-            if (playerState.canShootBulletOne()) {
-                playerState.shootBulletOne();
-                Fire(playerState.getBulletOne());
+            if (player.canShootBulletOne()) {
+                player.shootBulletOne();
+                // Fire(playerState.getBulletOne());
             }
         }
         
         if (Input.GetButton("Fire2")) {
-            if (playerState.canShootBulletTwo()) {
-                playerState.shootBulletTwo();
-                Fire(playerState.getBulletTwo());
+            if (player.canShootBulletTwo()) {
+                player.shootBulletTwo();
+                // Fire(playerState.getBulletTwo());
             }
         }
     }
