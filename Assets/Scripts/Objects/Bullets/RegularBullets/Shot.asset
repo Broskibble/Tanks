@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2d75276bfdf61940b975b9faecc6794, type: 3}
   m_Name: Shot
   m_EditorClassIdentifier: 
-  speed: 150
+  speed: 1
   damage: 1
   recoil: 1
   cost: 1
   bulletType: 0
   explosionEffect: {fileID: 0}
+  bulletPrefab: {fileID: 8674189077408779908, guid: 0ecf1982f4f9d5248a440b8d71b58349, type: 3}

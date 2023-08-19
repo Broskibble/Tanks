@@ -4,7 +4,7 @@ public enum BulletType { Regular, Builder, Mechanical };
 
 
 public abstract class Bullet : ScriptableObject {
-    [SerializeField] private float speed;
+    [SerializeField, Range(0, 5)] private float speed;
     [SerializeField, Range(0, 3)] private int damage;
     [SerializeField, Range(0, 5)] private float recoil;
     [SerializeField, Range(0, 3)] private int cost;
@@ -34,6 +34,8 @@ public abstract class Bullet : ScriptableObject {
     public GameObject getExplosionEffect() {
         return explosionEffect;
     }
+
+    public abstract GameObject getPrefab();
 
 
     protected void DamageGround(GameObject obj) {
