@@ -56,7 +56,7 @@ public class Aim : MonoBehaviour {
 
     private void UpdateTarget(RaycastHit hit) {
         target.transform.position = new Vector3(hit.point.x, hit.point.y + 0.01f, hit.point.z);
-        target.transform.rotation = Quaternion.LookRotation(hit.normal);
+        target.transform.rotation = Quaternion.LookRotation(-hit.normal);
         UpdateTrajectory(fire_point.transform.position, hit.point);
     }
 
@@ -81,11 +81,17 @@ public class Aim : MonoBehaviour {
             if (points[i].position == endPoint) {
                 inactivateRest = true;
             }
-            if (Physics.Raycast(points[i - 1].position, points[i].position - points[i - 1].position, out RaycastHit hit, Vector3.Magnitude(points[i].position - points[i - 1].position))) {
+            else if (Physics.Raycast(points[i - 1].position, points[i].position - points[i - 1].position, out RaycastHit hit, Vector3.Magnitude(points[i].position - points[i - 1].position))) {
+                if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Bullets")) {
+                    continue;
+                }
                 target.transform.position = hit.point + hit.normal * 0.01f;
                 target.transform.rotation = Quaternion.LookRotation(-hit.normal);
                 inactivateRest = true;
             }
+        }
+        if (!inactivateRest) { // if end point is not reached, set target to last point
+            target.transform.position = points[^1].position;
         }
     }
 

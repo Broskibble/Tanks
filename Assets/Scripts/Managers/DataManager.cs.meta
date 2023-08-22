@@ -3,7 +3,16 @@ guid: 6be3898e7c72ed54a8c0a7b369b9a2bb
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - shot: {instanceID: 0}
+  - bigShot: {instanceID: 0}
+  - drill: {instanceID: 0}
+  - driver: {instanceID: 0}
+  - block: {instanceID: 0}
+  - wall: {instanceID: 0}
+  - tower: {instanceID: 0}
+  - hill: {instanceID: 0}
+  - cube: {fileID: 4152765609612249217, guid: 4fe9db6ccfd40fb44b836a12dd851d41, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

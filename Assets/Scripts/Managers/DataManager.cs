@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class DataManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class DataManager : MonoBehaviour
     [SerializeField] private BuilderBullet wall;
     [SerializeField] private BuilderBullet tower;
     [SerializeField] private BuilderBullet hill;
+    [SerializeField] private GameObject cube;
 
     public Bullet getShot() {
         return shot;
@@ -75,5 +77,8 @@ public class DataManager : MonoBehaviour
         }
     }
 
+    public GameObject getCube() {
+        return cube;
+    }
 
 }

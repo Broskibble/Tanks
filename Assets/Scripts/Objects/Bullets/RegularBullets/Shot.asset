@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2d75276bfdf61940b975b9faecc6794, type: 3}
   m_Name: Shot
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0.32
   damage: 1
-  recoil: 1
+  recoil: 5
   cost: 1
   bulletType: 0
   explosionEffect: {fileID: 0}

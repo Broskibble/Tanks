@@ -7,14 +7,14 @@ public class Shoot : MonoBehaviour {
     [SerializeField] private Aim aim;
     
     void Update() {
-        if (Input.GetButtonDown("Fire1")) {
+        if (Input.GetButtonUp("Fire1")) {
             if (player.canShootBulletOne()) {
                 player.shootBulletOne();
                 Fire(player.getBulletOne());
             }
         }
         
-        if (Input.GetButtonDown("Fire2")) {
+        if (Input.GetButtonUp("Fire2")) {
             if (player.canShootBulletTwo()) {
                 player.shootBulletTwo();
             }

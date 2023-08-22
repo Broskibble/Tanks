@@ -10,9 +10,12 @@ public class Player : MonoBehaviour {
     private Bullet? bulletTwo;
     private float ammo;
     [SerializeField] private DataManager dataManager;
+    [SerializeField] private Aim aim;
     [SerializeField] private float reloadSpeed = 0.5f;
+    [SerializeField] private Rigidbody rb;
 
     void Start() {
+        rb = GetComponentInChildren<Rigidbody>();
         bulletOne = dataManager.getShot();
         bulletTwo = dataManager.getBigShot();
         ammo = 3;
@@ -21,7 +24,7 @@ public class Player : MonoBehaviour {
     void Update() {
         //continuously increase ammo over time, clamped at 3
         ammo = Mathf.Clamp(ammo + Time.deltaTime * reloadSpeed, 0, 3);
-        Debug.Log(ammo);
+        //Debug.Log(ammo);
     }
 
     public bool canShootBulletOne() {
@@ -41,6 +44,10 @@ public class Player : MonoBehaviour {
     public void shootBulletOne() {
         Debug.Log("shoot bullet one");
         ammo -= bulletOne.getCost();
+        // FIXME: force doesn't work right
+        // Vector3 force = (transform.position - aim.getTarget().transform.position) * 50;
+        // force.y = Mathf.Clamp(force.y, 0, 100);
+        // rb.AddForce(force);
     }
 
     public void shootBulletTwo() {
@@ -53,6 +60,6 @@ public class Player : MonoBehaviour {
     }
 
     public Bullet getBulletTwo() {
-        return bulletTwo;
+        return bulletTwo != null ? bulletTwo : bulletOne;
     }
 }
