@@ -10,6 +10,7 @@ public abstract class Bullet : ScriptableObject {
     [SerializeField, Range(0, 3)] private int cost;
     [SerializeField] private BulletType bulletType;
     [SerializeField] private GameObject explosionEffect;
+    private GameObject target;
 
     public float getSpeed() {
         return speed;

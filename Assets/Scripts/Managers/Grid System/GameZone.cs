@@ -57,7 +57,7 @@ public class GameZone : MonoBehaviour
                     cube.transform.SetParent(gridLayer.transform, false);
                     cube.name = string.Format("Cube {0} {1} {2}", layer, column, row);
                     cube.transform.localScale = Vector3.one * (1 - outlinePercent);
-                    if (!(layer == 0 || layer == 1)) {
+                    if (!(layer == 0 || layer == 1 || (layer == 2 && column == 0) || (layer == 3 && column == 0 && row == 5))) {
                         cube.SetActive(false);
                     }
                 }
@@ -127,5 +127,24 @@ public class GameZone : MonoBehaviour
         }
     }
 
+    public GameObject getLower(GameObject cube) {
+        int[] coords = getCoords(cube);
+        if (coords[0] == 0) {
+            return null;
+        }
+        return cubemap[coords[0] - 1][coords[1]][coords[2]];
+    }
 
+    public int[] getCoords(GameObject cube) {
+        int[] coords = new int[3];
+        string[] name = cube.name.Split(' ');
+        coords[0] = int.Parse(name[1]);
+        coords[1] = int.Parse(name[2]);
+        coords[2] = int.Parse(name[3]);
+        return coords;
+    }
+
+    public int getLayer(Transform transform) {
+        return (int) math.floor(transform.position.y);
+    }
 }
