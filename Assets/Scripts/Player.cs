@@ -28,14 +28,14 @@ public class Player : MonoBehaviour {
     }
 
     public bool canShootBulletOne() {
-        if (ammo >= bulletOne.getCost()) {
+        if (ammo >= bulletOne.GetCost()) {
             return true;
         }
         return false;
     }
 
     public bool canShootBulletTwo() {
-        if (ammo >= bulletTwo?.getCost()) {
+        if (ammo >= bulletTwo?.GetCost()) {
             return true;
         }
         return false;
@@ -43,7 +43,7 @@ public class Player : MonoBehaviour {
 
     public void shootBulletOne() {
         Debug.Log("shoot bullet one");
-        ammo -= bulletOne.getCost();
+        ammo -= bulletOne.GetCost();
         // FIXME: force doesn't work right
         // Vector3 force = (transform.position - aim.getTarget().transform.position) * 50;
         // force.y = Mathf.Clamp(force.y, 0, 100);
@@ -52,7 +52,7 @@ public class Player : MonoBehaviour {
 
     public void shootBulletTwo() {
         Debug.Log("shoot bullet two");
-        ammo -= bulletTwo?.getCost() ?? 0;
+        ammo -= bulletTwo?.GetCost() ?? 0;
     }
 
     public Bullet getBulletOne() {

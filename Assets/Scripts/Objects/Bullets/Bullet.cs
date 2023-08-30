@@ -5,47 +5,37 @@ public enum BulletType { Regular, Builder, Mechanical };
 
 public abstract class Bullet : ScriptableObject {
     [SerializeField, Range(0, 5)] private float speed;
-    [SerializeField, Range(0, 3)] private int damage;
+    [SerializeField, Range(0, 3)] protected int damage;
     [SerializeField, Range(0, 5)] private float recoil;
     [SerializeField, Range(0, 3)] private int cost;
     [SerializeField] private BulletType bulletType;
     [SerializeField] private GameObject explosionEffect;
     private GameObject target;
 
-    public float getSpeed() {
+    public float GetSpeed() {
         return speed;
     }
 
-    public int getDamage() {
+    public int GetDamage() {
         return damage;
     }
 
-    public float getRecoil() {
+    public float GetRecoil() {
         return recoil;
     }
 
-    public int getCost() {
+    public int GetCost() {
         return cost;
     }
 
-    public BulletType getBulletType() {
+    public BulletType GetBulletType() {
         return bulletType;
     }
 
-    public GameObject getExplosionEffect() {
+    public GameObject GetExplosionEffect() {
         return explosionEffect;
     }
 
-    public abstract GameObject getPrefab();
+    public abstract GameObject GetPrefab();
 
-
-    protected void DamageGround(GameObject obj) {
-        //GameObject effect = Instantiate(explosionEffect, transform.position, transform.rotation);
-        //obj.GetComponent<Ground>().TakeDamage(damage);
-    }
-
-    protected void DamagePlayer(GameObject obj) {
-        //GameObject effect = Instantiate(explosionEffect, transform.position, transform.rotation);
-        //obj.GetComponent<Player>().TakeDamage(damage);
-    }
 }

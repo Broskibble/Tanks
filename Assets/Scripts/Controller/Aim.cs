@@ -53,8 +53,8 @@ public class Aim : MonoBehaviour {
         }
         if (Physics.Raycast(ray, out RaycastHit hit, 100.0f, layerMask)) {
             GameObject block = hit.collider.gameObject;
-            while (gameZone.getLayer(block.transform) > gameZone.getLayer(player.transform)) {
-                block = gameZone.getLower(block);
+            while (gameZone.GetLayer(block.transform) > gameZone.GetLayer(player.transform)) {
+                block = gameZone.GetLower(block);
                 if (block == null) {
                     break;
                 }
@@ -75,10 +75,10 @@ public class Aim : MonoBehaviour {
     public void UpdateTrajectory(Vector3 startPoint, Vector3 endPoint) {
         float speed;
         if (specialTrajectory && player.getBulletTwo() != null) {
-            speed = player.getBulletTwo().getSpeed();
+            speed = player.getBulletTwo().GetSpeed();
         }
         else {
-            speed = player.getBulletOne().getSpeed();
+            speed = player.getBulletOne().GetSpeed();
         }
 
         if (Physics.Raycast(startPoint, endPoint - startPoint, out RaycastHit hit, 100.0f, LayerMask.GetMask("Ground")))
@@ -103,7 +103,7 @@ public class Aim : MonoBehaviour {
             target.transform.position = points[^1].position;
         }
         else {
-            Debug.Log(hit.normal + " for target");
+            //Debug.Log(hit.normal + " for target");
             target.transform.position = endPoint;
             target.transform.rotation = Quaternion.LookRotation(-hit.normal);
         }

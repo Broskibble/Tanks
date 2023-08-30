@@ -127,15 +127,23 @@ public class GameZone : MonoBehaviour
         }
     }
 
-    public GameObject getLower(GameObject cube) {
-        int[] coords = getCoords(cube);
+    public GameObject GetLower(GameObject cube) {
+        int[] coords = GetCoords(cube);
         if (coords[0] == 0) {
             return null;
         }
         return cubemap[coords[0] - 1][coords[1]][coords[2]];
     }
 
-    public int[] getCoords(GameObject cube) {
+    public GameObject GetUpper(GameObject cube) {
+        int[] coords = GetCoords(cube);
+        if (coords[0] == mapSize.y - 1) {
+            return null;
+        }
+        return cubemap[coords[0] + 1][coords[1]][coords[2]];
+    }
+
+    public int[] GetCoords(GameObject cube) {
         int[] coords = new int[3];
         string[] name = cube.name.Split(' ');
         coords[0] = int.Parse(name[1]);
@@ -144,7 +152,7 @@ public class GameZone : MonoBehaviour
         return coords;
     }
 
-    public int getLayer(Transform transform) {
+    public int GetLayer(Transform transform) {
         return (int) math.floor(transform.position.y);
     }
 }

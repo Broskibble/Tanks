@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public string Size = "15x10";
     private List<Player> players;
+    private GameZone gameZone;
 
     private void Awake() {
         if (instance == null) {
@@ -23,6 +24,11 @@ public class GameManager : MonoBehaviour
         foreach (Player player in FindObjectsOfType<Player>()) {
             players.Add(player);
         }
+        gameZone = FindObjectOfType<GameZone>();
+    }
+
+    public GameZone GetGameZone() {
+        return gameZone;
     }
 
     public void AddPlayer(Player player) {

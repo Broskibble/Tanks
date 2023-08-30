@@ -5,22 +5,9 @@ using UnityEngine;
 public class RegularBullet : Bullet {
     [SerializeField] private GameObject bulletPrefab;
 
-    public override GameObject getPrefab() {
+    public override GameObject GetPrefab() {
         return bulletPrefab;
     }
-
-    private void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.tag == "Ground") {
-            DamageGround(collision.gameObject);
-            //Destroy(gameObject);
-        }
-        if (collision.gameObject.tag == "Player") {
-            DamagePlayer(collision.gameObject);
-        }
-
-
-    }
-    
     
     
 }

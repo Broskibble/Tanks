@@ -12,7 +12,7 @@ public class BuilderBullet : Bullet {
         }
     }
 
-    public override GameObject getPrefab() {
+    public override GameObject GetPrefab() {
         return blockPrefab;
     }
 }

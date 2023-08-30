@@ -10,7 +10,7 @@ public class MechanicalBullet : Bullet {
         }
     }
 
-    public override GameObject getPrefab() {
+    public override GameObject GetPrefab() {
         return null;
     }
 }

@@ -23,8 +23,8 @@ public class Shoot : MonoBehaviour {
 
     void Fire(Bullet bullet) {
         Quaternion faceTarget = Quaternion.LookRotation(aim.getTarget().transform.position - aim.getFirePoint().transform.position);
-        GameObject bulletInstance = Instantiate(bullet.getPrefab(), aim.getFirePoint().transform.position, faceTarget);
-        
-        bulletInstance.GetComponent<Rigidbody>().velocity = transform.forward * bullet.getSpeed() * 8;
+        GameObject bulletInstance = Instantiate(bullet.GetPrefab(), aim.getFirePoint().transform.position, faceTarget);
+        bulletInstance.GetComponent<TestShot>().SetUp(bullet.GetDamage(), bullet.GetSpeed(), bullet.GetRecoil(), bullet.GetCost(), bullet.GetExplosionEffect(), bullet.GetPrefab(), aim.getTarget());
+        bulletInstance.GetComponent<Rigidbody>().velocity = transform.forward * bullet.GetSpeed() * 8;
     }
 }
